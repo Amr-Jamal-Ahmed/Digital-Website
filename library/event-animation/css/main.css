@@ -1,0 +1,189 @@
+:root {
+  --EA-transform-origin: center;
+  --EA-animation-dur: 1000ms;
+  --EA-animation-delay: 0ms;
+  --EA-animation-iteration-count: 1;
+  --EA-animation-timing-func: ease-out;
+  --EA-animation-play-state: paused;
+  --EA-fade-top-dist: 70px;
+  --EA-fade-right-dist: -70px;
+  --EA-fade-bottom-dist: -70px;
+  --EA-fade-left-dist: 70px;
+}
+
+/* start style for fade animation */
+.ea {
+  transition: var(--EA-animation-dur) var(--EA-animation-delay) var(--EA-animation-timing-func);
+  transform-origin: var(--EA-transform-origin);
+  opacity: 0;
+}
+
+.show {
+  opacity: 1 !important;
+  transform: translate(0, 0) !important;
+}
+
+.fade-top {
+  transform: translateY(70px);
+}
+
+.show-top-on-load {
+  animation: fade-top var(--EA-animation-dur) var(--EA-animation-delay) var(--EA-animation-iteration-count) var(--EA-animation-timing-func) forwards;
+}
+
+.fade-right {
+  transform: translateX(-70px);
+}
+
+.show-right-on-load {
+  animation: fade-right var(--EA-animation-dur) var(--EA-animation-delay) var(--EA-animation-iteration-count) var(--EA-animation-timing-func) forwards;
+}
+
+.fade-bottom {
+  transform: translateY(-70px);
+}
+
+.show-bottom-on-load {
+  animation: fade-bottom var(--EA-animation-dur) var(--EA-animation-delay) var(--EA-animation-iteration-count) var(--EA-animation-timing-func) forwards;
+}
+
+.fade-left {
+  transform: translateX(70px);
+}
+
+.show-left-on-load {
+  animation: fade-left var(--EA-animation-dur) var(--EA-animation-delay) var(--EA-animation-iteration-count) var(--EA-animation-timing-func) forwards;
+}
+
+@media (min-width: 768px) {
+  .fade-md-top {
+    transform: translateY(70px);
+  }
+  .fade-md-right {
+    transform: translateX(-70px);
+  }
+  .fade-md-bottom {
+    transform: translateY(-70px);
+  }
+  .fade-md-left {
+    transform: translateX(70px);
+  }
+}
+
+@media (min-width: 500px) {
+  .fade-sm-top {
+    transform: translateY(70px);
+  }
+  .fade-sm-right {
+    transform: translateX(-70px);
+  }
+  .fade-sm-bottom {
+    transform: translateY(-70px);
+  }
+  .fade-sm-left {
+    transform: translateX(70px);
+  }
+}
+
+@media (min-width: 0px) {
+  .fade-u-sm-top {
+    transform: translateY(70px);
+  }
+  .fade-u-sm-right {
+    transform: translateX(70px);
+  }
+  .fade-u-sm-bottom {
+    transform: translateY(-70px);
+  }
+  .fade-u-sm-left {
+    transform: translateX(-70px);
+  }
+}
+
+@keyframes fade-top {
+  0% {
+    transform: translateY(var(--EA-fade-top-dist));
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-right {
+  0% {
+    transform: translateX(var(--EA-fade-right-dist));
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-bottom {
+  0% {
+    transform: translateY(var(--EA-fade-bottom-dist));
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-left {
+  0% {
+    transform: translateX(var(--EA-fade-left-dist));
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+/* end style for fade animation */
+.popup {
+  transform: translateZ(0px) scale(0);
+  transition: transform 0.5s;
+}
+
+.show-popup {
+  --EA-animation-timing-func: ease-in;
+  opacity: 1 !important;
+  animation: popup var(--EA-animation-dur) var(--EA-animation-delay) var(--EA-animation-iteration-count) var(--EA-animation-timing-func) forwards;
+}
+
+@keyframes popup {
+  0% {
+    transform: translateZ(0px) scale(0);
+  }
+  90% {
+    transform: translateZ(30px) scale(1.05);
+  }
+  100% {
+    transform: translateZ(0px) scale(1);
+  }
+}
+
+.whirlpool {
+  transform: rotateZ(0deg) scale(0);
+}
+
+.show-whirlpool {
+  opacity: 1 !important;
+  transform: rotateZ(360deg) scale(1);
+}
+
+.show-whirlpool-on-load {
+  animation: whirlpool var(--EA-animation-dur) var(--EA-animation-delay) var(--EA-animation-iteration-count) var(--EA-animation-timing-func) forwards;
+}
+
+@keyframes whirlpool {
+  0% {
+    transform: rotateZ(0deg) scale(0);
+  }
+  100% {
+    transform: rotateZ(360deg) scale(1);
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=main.css.map */
